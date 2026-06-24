@@ -8,7 +8,7 @@ A beginner-friendly, fully reproducible time-series analysis of air-raid alerts 
 
 - **101,705 alerts** across **25 regions**, 25 Feb 2022 – 23 Jun 2026.
 - **2026 is the most intense period of the entire war.** The busiest single month is **May 2026 (3,402 alerts)** — above the 2022 invasion peak (2,084/mo).
-- **The war has no weekly rhythm.** Thursday (15,103) and Sunday (13,231) differ by only ~14%; attacks don't respect weekends.
+- **The war has no weekly rhythm.** Thursday (15,103) is only ~14% above the quietest day, Sunday (13,231); attacks don't respect weekends.
 - **Alert *starts* peak at midday** (12:00, 5,482) and bottom out in the early morning (06:00, 2,776) — but this counts when alerts *begin*, not hours spent under alert (see caveat).
 - **Biggest targets are frontline east/south oblasts:** Dnipropetrovsk (11.6%), Kharkiv (10.9%), Zaporizhzhia (8.2%), Donetsk (8.0%), Sumy (7.6%). The capital, **Kyiv City, is far down the list (2,299 alerts)**.
 - **It's a trend, not a season.** A Prophet decomposition shows the trend swinging ~46→133 alerts/day, dwarfing weekly (±~6) and yearly (±~12) effects.
@@ -41,7 +41,7 @@ A beginner-friendly, fully reproducible time-series analysis of air-raid alerts 
 ### When
 - **Over the war:** invasion spike (Feb 2022) → calmer 2023 (~1,000–1,600/mo) → gradual escalation through 2024 → mid-2025 dip → steep climb to all-time highs in 2026. Peak month: **May 2026, 3,402 alerts**.
 - **Time of day:** alert *starts* peak at **12:00 (5,482)**, lowest at **06:00 (2,776)**. This counts when alerts *begin*; overnight drone (Shahed) alerts tend to be long single events, so total *time under alert* likely skews more nocturnal than the starts curve suggests.
-- **Day of week:** essentially flat — **Thursday highest (15,103), Sunday lowest (13,231)**, ~14% spread.
+- **Day of week:** essentially flat — **Thursday highest (15,103), Sunday lowest (13,231)** — only ~14% above the quietest day.
 
 ### Where
 - **Biggest targets** (share of all alerts): Dnipropetrovsk **11.6%**, Kharkiv **10.9%**, Zaporizhzhia **8.2%**, Donetsk **8.0%**, Sumy **7.6%** — all frontline east/south oblasts.
@@ -64,9 +64,7 @@ If the recent escalation continues, the model projects **~136 alerts/day by 31 D
 The analysis is fully reproducible — the exact dataset is committed in this repo.
 
 - **In Colab (easiest):** click the badge above, then `Runtime → Run all`. The notebook loads the committed snapshot from this repo over the web; no API keys or setup needed.
-- **Locally / offline:** clone the repo and run the notebook in Jupyter. To read the committed CSV straight from disk (no internet), change the `url = ...` line in the data-loading cell (Cell 2) to:
-  ```python
-  url = "air_alerts_snapshot_2026-06-23.csv"
+- **Locally / offline:** clone the repo and run the notebook in Jupyter. To read the committed CSV straight from disk (no internet), change the `url = ...` line in the data-loading cell (Cell 2) to `url = "air_alerts_snapshot_2026-06-23.csv"`.
 
 ## Attribution & license
 
