@@ -14,6 +14,16 @@ A beginner-friendly, fully reproducible time-series analysis of air-raid alerts 
 - **It's a trend, not a season.** A Prophet decomposition shows the trend swinging ~46→133 alerts/day, dwarfing weekly (±~6) and yearly (±~12) effects.
 - **Projection:** if the recent escalation continues, **~136 alerts/day by end of 2026** (range 109–164). This is an extrapolation, not a prediction (see caveats).
 
+## What's in this repo
+
+| File | What it is |
+|---|---|
+| `Ukraine-Air-Raid-Alerts-Report.pdf` | Findings as a clean 8-page report — **start here** for a quick read. |
+| `Ukraine-Air-Raid-Alerts-Report.html` | The same report as self-contained HTML (opens offline in any browser). |
+| `air_raid_analysis.ipynb` | The full analysis notebook — every step commented; runnable in Colab. |
+| `air_alerts_snapshot_2026-06-23.csv` | The frozen dataset the analysis runs on. |
+| `LICENSE` | MIT. |
+
 ## Questions this answers
 
 1. When do alerts happen most — across the day, the week, and over the war?
@@ -35,6 +45,8 @@ A beginner-friendly, fully reproducible time-series analysis of air-raid alerts 
 - **Python + pandas + matplotlib**, with **Prophet** for the forecast. Runs in Google Colab (badge above) or any Jupyter environment.
 - Timestamps are converted from UTC to **Kyiv local time** (`Europe/Kyiv`), which applies the EET/EEST daylight-saving switch automatically per record. (Ukraine still observed DST through 2026 — the 2024 law to abolish it was vetoed.)
 - Alerts are **resampled** to daily/weekly/monthly counts and examined by hour-of-day, day-of-week, month, and region.
+
+The notebook is written to be read top-to-bottom — each step is commented and explained in plain language.
 
 ## Findings in detail
 
