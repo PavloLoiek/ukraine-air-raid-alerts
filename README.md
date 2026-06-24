@@ -61,9 +61,12 @@ If the recent escalation continues, the model projects **~136 alerts/day by 31 D
 
 ## Reproduce it
 
-1. Open the notebook in Colab (badge above), or locally in Jupyter.
-2. `Runtime → Run all`. It loads the committed snapshot and regenerates every chart and number.
-3. No API keys or setup needed — the dataset ships with the repo.
+The analysis is fully reproducible — the exact dataset is committed in this repo.
+
+- **In Colab (easiest):** click the badge above, then `Runtime → Run all`. The notebook loads the committed snapshot from this repo over the web; no API keys or setup needed.
+- **Locally / offline:** clone the repo and run the notebook in Jupyter. To read the committed CSV straight from disk (no internet), change the `url = ...` line in the data-loading cell (Cell 2) to:
+  ```python
+  url = "air_alerts_snapshot_2026-06-23.csv"
 
 ## Attribution & license
 
